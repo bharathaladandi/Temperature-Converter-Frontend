@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import './Style.css';
+
 
 export const Homepage = () => {
     const [temp, setTemp] = useState("");
@@ -8,12 +10,10 @@ export const Homepage = () => {
 
     const handleChange = (e) => {
         setTemp(e.target.value)
-        // console.log(e.target.value)
     }
 
     const handleSelct = (e) => {
         setScale(e.target.value)
-        // console.log(e.target.value)
     }
 
     const handleConversion = () => {
@@ -25,12 +25,10 @@ export const Homepage = () => {
         if (scale === 'celsius') {
             const showCelsius = (temp * 9 / 5) + 32;
             setAns(`${temp}°F is equal to ${showCelsius.toFixed(2)}°C`);
-            // console.log(`${temp}°F is equal to ${showCelsius}°C`);
         }
         else {
             const showFahrenheit = (temp - 32) * 5 / 9;
             setAns(`${temp}°C is equal to ${showFahrenheit.toFixed(2)}°F`);
-            // console.log(`${temp}°C is equal to ${showFahrenheit}°F`);
         }
 
         if (isNaN(temp)) {
@@ -39,29 +37,31 @@ export const Homepage = () => {
         }
 
         setError("")
-
     }
 
-
     return (
-        <div>
+        <div className="tempeconverter">
             <div>
                 <h1>Temperature Converter</h1>
             </div>
-            <div>
-                <input placeholder='Add Temperature' value={temp} onChange={handleChange} />
-                <select value={scale} onChange={handleSelct} >
+            <div className="container">
+                <input className="tempeinput" placeholder='Add Temperature' value={temp} onChange={handleChange} />
+                <select value={scale} onChange={handleSelct} className="scale-dropdown">
                     <option value="celsius">Celsius</option>
                     <option value="fahrenheit">Fahrenheit</option>
                 </select>
             </div>
-            <div>
-                <button disabled={scale === 'fahrenheit'} onClick={handleConversion}>Convert to Celsius</button>
-                <button disabled={scale === 'celsius'} onClick={handleConversion}>Convert to Fahrenheit</button>
+            <div className="btncon">
+                <button className={`convbtn ${scale === 'fahrenheit' ? 'disabled' : ''}`}
+                    disabled={scale === 'fahrenheit'}
+                    onClick={handleConversion}>Convert to Celsius</button>
+                <button className={`convbtn ${scale === 'celsius' ? 'disabled' : ''}`}
+                    disabled={scale === 'celsius'}
+                    onClick={handleConversion}>Convert to Fahrenheit</button>
             </div>
-            {error ? <h3>{error}</h3> :
+            {error ? <h3 className="error">{error}</h3> :
                 <div>
-                    <h3>{ans}</h3>
+                    <h3 className="result">{ans}</h3>
                 </div>
             }
         </div>

@@ -1,0 +1,89 @@
+.tempeconverter {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    /* max-width: 400px; */
+    width: 50%;
+    margin: auto;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .tempeinput {
+    width: 100px;
+    padding: 10px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 16px;
+    outline: none;
+  }
+  
+  .scale-dropdown {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  .btncon {
+    margin-bottom: 20px;
+  }
+  
+  .convbtn {
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #007bff;
+    border: 2px solid #007bff; 
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    /* letter-spacing: 1px; */
+  }
+  
+  .convbtn:hover {
+    background-color: #007bff; 
+    color: #fff; 
+  }
+  
+  .error {
+    color: red;
+    font-size: 16px;
+  }
+  
+  .result {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #007bff;
+  }
+
+  .disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    color: white;
+    margin: 5px;
+    border-color: white;
+  }
+  .disabled:hover {
+    background-color: #ccc;
+    cursor: not-allowed;
+    color: white;
+  }
+  
+  
