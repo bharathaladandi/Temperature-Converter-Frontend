@@ -24,11 +24,11 @@ export const Homepage = () => {
 
         if (scale === 'celsius') {
             const showCelsius = (temp * 9 / 5) + 32;
-            setAns(`${temp}°F is equal to ${showCelsius.toFixed(2)}°C`);
+            setAns(`${temp}°C is equal to ${showCelsius.toFixed(2)}°F`);
         }
         else {
             const showFahrenheit = (temp - 32) * 5 / 9;
-            setAns(`${temp}°C is equal to ${showFahrenheit.toFixed(2)}°F`);
+            setAns(`${temp}°F is equal to ${showFahrenheit.toFixed(2)}°C`);
         }
 
         if (isNaN(temp)) {
